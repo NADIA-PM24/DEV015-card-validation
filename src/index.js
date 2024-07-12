@@ -1,21 +1,26 @@
-import validator from './validator.js';
+import isValid from './validator.js';
 
-let numeros = [4, 2, 4, 2, 4, 2, 4, 2, 4, 2, 4, 2, 4, 2, 4, 2,];
-numeros.reverse();
-console.log(numeros); 
+var inputElement = document.getElementById('4532015112830366');
 
-console.log(validator);
+function validarNumeroTarjeta() {
 
+    var valorTarjeta = inputElement.value;
+    var esValido = isValid(valorTarjeta);
+    console.log('¿Es válido?', esValido);
+}
+
+inputElement.addEventListener('input', validarNumeroTarjeta);
+
+inputElement.value = '4532015112830366';
+
+validarNumeroTarjeta();
 const validatorCard = {
 
-//const númeroDetarjeta = 4242424242424242;
-//colocar el número para hacer el reverso de la tarjeta
-//número de tarjeta reverso
-//transformar desde un string a un array
-//RECORRER ese nuevo array
-//después de esto debo de recorrer las posiciones pares
-//multiplicar los números pares
-//después de números pares debe aparecer que sea una tarjeta válida
-//
-} 
+
+        isValid: function (numeroTarjeta) {
+            return numeroTarjeta.length === 16;
+        }
+
+
+}
 console.log(validatorCard);
