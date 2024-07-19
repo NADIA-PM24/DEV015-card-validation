@@ -1,26 +1,26 @@
-import isValid from './validator.js';
+import validator from './validator.js';
+const inputElement = document.getElementById("cardNumber");
+console.log(inputElement)
 
-var inputElement = document.getElementById('4532015112830366');
+const inputRegion = document.getElementById("countryorregion")
+console.log(inputRegion)
+
+const Buttonpay = document.getElementById("pay-button")
+console.log(Buttonpay)
 
 function validarNumeroTarjeta() {
 
-    var valorTarjeta = inputElement.value;
-    var esValido = isValid(valorTarjeta);
-    console.log('¿Es válido?', esValido);
+  const valorTarjeta = inputElement.value;
+  console.log(valorTarjeta)
+
+  //Tomar el valor del número de tarjeta que ingresa el usuario en el input
+  const isValid = validator.isValid(valorTarjeta);
+  console.log('¿Es válido?', isValid);
 }
 
-inputElement.addEventListener('input', validarNumeroTarjeta);
 
-inputElement.value = '4532015112830366';
-
-validarNumeroTarjeta();
-const validatorCard = {
+//inputElement.addEventListener('input', validarNumeroTarjeta);
+Buttonpay.addEventListener("click", validarNumeroTarjeta); 
 
 
-        isValid: function (numeroTarjeta) {
-            return numeroTarjeta.length === 16;
-        }
 
-
-}
-console.log(validatorCard);
